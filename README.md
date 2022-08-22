@@ -7,8 +7,7 @@
  UNITTYPE -> length | temperature | weight
  
  
-## UNIT ABBREVIATIONS USED
-Unit code | Unit
+## UNIT ABBREVIATIONS USED (Unit code | Unit)
 For LENGTH:
 m | Meters 
 km | Kilometers 
