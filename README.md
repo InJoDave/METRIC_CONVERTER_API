@@ -4,7 +4,7 @@
  API URL structure: http://localhost:8080/convert/UNITTYPE?fromUnit=&toUnit=&valueToConvert=
  
  Here UNITTYPE must be replaced by the type of conversion you need.
- UNITTYPE -> length | temperature | weight
+ UNITTYPE -> length | temperature | weight | area
  
  
 ## UNIT ABBREVIATIONS USED (Unit code | Unit)
