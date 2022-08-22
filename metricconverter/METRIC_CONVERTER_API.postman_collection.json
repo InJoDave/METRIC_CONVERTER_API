@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "65c77acd-8228-4890-ad01-85a5fecb0ff5",
+		"name": "METRIC_CONVERTER_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LengthConversionTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/length?fromUnit=cm&toUnit=mm&valueToConvert=12.34",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"length"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "cm"
+						},
+						{
+							"key": "toUnit",
+							"value": "mm"
+						},
+						{
+							"key": "valueToConvert",
+							"value": "12.34"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LengthConversionEmptyValueTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/length?fromUnit=cm&toUnit=mm&valueToConvert=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"length"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "cm"
+						},
+						{
+							"key": "toUnit",
+							"value": "mm"
+						},
+						{
+							"key": "valueToConvert",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LengthConversionMissingParamterTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/length?fromUnit=cm&toUnit=mm",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"length"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "cm"
+						},
+						{
+							"key": "toUnit",
+							"value": "mm"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LengthConversionNotImplementedTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/length?fromUnit=cm&toUnit=m&valueToConvert=1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"length"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "cm"
+						},
+						{
+							"key": "toUnit",
+							"value": "m"
+						},
+						{
+							"key": "valueToConvert",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TemperatureConversionTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/temperature?fromUnit=c&toUnit=f&valueToConvert=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"temperature"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "c"
+						},
+						{
+							"key": "toUnit",
+							"value": "f"
+						},
+						{
+							"key": "valueToConvert",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TemperatureConversionEmptyValueTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/temperature?fromUnit=f&toUnit=c&valueToConvert=54.21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"temperature"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "f"
+						},
+						{
+							"key": "toUnit",
+							"value": "c"
+						},
+						{
+							"key": "valueToConvert",
+							"value": "54.21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TemperatureConversionMissingParameterTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/temperature?fromUnit=c&toUnit=f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"temperature"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "c"
+						},
+						{
+							"key": "toUnit",
+							"value": "f"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
