@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ayo.metricconverter.entity.ConversionBean;
 import com.ayo.metricconverter.service.LengthConversionService;
 import com.ayo.metricconverter.service.TemperatureConversionService;
+import com.ayo.metricconverter.service.WeightConversionService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,9 +26,12 @@ public class ConversionController {
 
 	@Autowired
 	LengthConversionService lengthConversionService;
-	
+
 	@Autowired
 	TemperatureConversionService temperatureConversionService;
+
+	@Autowired
+	WeightConversionService weightConversionService;
 
 	/**
 	 * Return the details of conversion for Length Default conversion has been set
@@ -69,8 +73,31 @@ public class ConversionController {
 		if (valueToConvert == null) {
 			throw new IllegalArgumentException("Parameter valueToConvert is Empty");
 		} else {
-			final ConversionBean conversionBean = temperatureConversionService.convertTemperatureFromTo(fromUnit, valueToConvert,
-					toUnit);
+			final ConversionBean conversionBean = temperatureConversionService.convertTemperatureFromTo(fromUnit,
+					valueToConvert, toUnit);
+			return ResponseEntity.ok(conversionBean);
+		}
+	}
+	
+	/**
+	 * Return the details of conversion for Weight Default conversion has been set
+	 * from grams to ounce
+	 * 
+	 * @param fromUnit
+	 * @param valueToConvert
+	 * @param toUnit
+	 * @return
+	 */
+	@GetMapping("/weight")
+	public ResponseEntity<ConversionBean> getWeightConvertedFromTo(
+			@RequestParam(required = true, name = "fromUnit", defaultValue = "g") String fromUnit,
+			@RequestParam(required = true, name = "valueToConvert") Double valueToConvert,
+			@RequestParam(required = true, name = "toUnit", defaultValue = "oz") String toUnit) {
+		if (valueToConvert == null) {
+			throw new IllegalArgumentException("Parameter valueToConvert is Empty");
+		} else {
+			final ConversionBean conversionBean = weightConversionService.convertWeightFromTo(fromUnit,
+					valueToConvert, toUnit);
 			return ResponseEntity.ok(conversionBean);
 		}
 	}

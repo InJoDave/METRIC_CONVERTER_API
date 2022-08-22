@@ -211,7 +211,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/convert/temperature?fromUnit=c&toUnit=f",
+					"raw": "http://localhost:8080/convert/temperature?fromUnit=f&toUnit=c",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -224,11 +224,109 @@
 					"query": [
 						{
 							"key": "fromUnit",
-							"value": "c"
+							"value": "f"
 						},
 						{
 							"key": "toUnit",
-							"value": "f"
+							"value": "c"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeightConversionTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/weight?fromUnit=g&toUnit=oz&valueToConvert=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"weight"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "g"
+						},
+						{
+							"key": "toUnit",
+							"value": "oz"
+						},
+						{
+							"key": "valueToConvert",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeightConversionEmptyValueTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/weight?fromUnit=g&toUnit=oz&valueToConvert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"weight"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "g"
+						},
+						{
+							"key": "toUnit",
+							"value": "oz"
+						},
+						{
+							"key": "valueToConvert",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WeightConversionMissingParameterTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/weight?fromUnit=g&toUnit=oz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"weight"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "g"
+						},
+						{
+							"key": "toUnit",
+							"value": "oz"
 						}
 					]
 				}

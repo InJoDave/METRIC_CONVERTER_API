@@ -34,10 +34,10 @@ public class LengthConversionServiceImpl implements LengthConversionService{
 		//		Metric_To_Imperial
 		case "cm":
 			switch (to) {
-			case "mm":
-				numBigDecimal = BigDecimal.valueOf(fromValue*10).stripTrailingZeros().setScale(2, RoundingMode.HALF_EVEN);
-				conversionBean.setResult(numBigDecimal);
-				break;
+//			case "mm":
+//				numBigDecimal = BigDecimal.valueOf(fromValue*10).stripTrailingZeros().setScale(2, RoundingMode.HALF_EVEN);
+//				conversionBean.setResult(numBigDecimal);
+//				break;
 			case "in":
 				numBigDecimal = BigDecimal.valueOf(fromValue*0.3937).stripTrailingZeros().setScale(2, RoundingMode.HALF_EVEN);
 				conversionBean.setResult(numBigDecimal);

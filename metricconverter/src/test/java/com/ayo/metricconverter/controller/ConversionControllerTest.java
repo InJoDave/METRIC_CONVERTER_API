@@ -33,9 +33,9 @@ class ConversionControllerTest {
 	public void testGetLengthConvertedFromTo() throws JSONException {
 		HttpEntity<String> entity = new HttpEntity<>(null, headers);
 		ResponseEntity<String> response = restTemplate.exchange(
-				createURLWithPort("/convert/length?fromUnit=cm&toUnit=mm&valueToConvert=1.234"), HttpMethod.GET, entity,
+				createURLWithPort("/convert/length?fromUnit=cm&toUnit=in&valueToConvert=1"), HttpMethod.GET, entity,
 				String.class);
-		String expected = "{\"conversionType\":\"Length\",\"from\":\"cm\",\"value\":1.234,\"to\":\"mm\",\"result\":12.34}";
+		String expected = "{\"conversionType\":\"Length\",\"from\":\"cm\",\"value\":1,\"to\":\"in\",\"result\":0.39}";
 		JSONAssert.assertEquals(expected, response.getBody(), false);
 	}
 	
@@ -46,6 +46,16 @@ class ConversionControllerTest {
 				createURLWithPort("/convert/temperature?fromUnit=c&toUnit=f&valueToConvert=12.34"), HttpMethod.GET, entity,
 				String.class);
 		String expected = "{\"conversionType\":\"Temperature\",\"from\":\"c\",\"value\":12.34,\"to\":\"f\",\"result\":54.21}";
+		JSONAssert.assertEquals(expected, response.getBody(), false);
+	}
+	
+	@Test
+	public void testGetWeightConvertedFromTo() throws JSONException {
+		HttpEntity<String> entity = new HttpEntity<>(null, headers);
+		ResponseEntity<String> response = restTemplate.exchange(
+				createURLWithPort("/convert/weight?fromUnit=g&toUnit=oz&valueToConvert=1"), HttpMethod.GET, entity,
+				String.class);
+		String expected = "{\"conversionType\":\"Weight\",\"from\":\"g\",\"value\":1,\"to\":\"oz\",\"result\":0.04}";
 		JSONAssert.assertEquals(expected, response.getBody(), false);
 	}
 
