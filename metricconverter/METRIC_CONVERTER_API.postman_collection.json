@@ -332,6 +332,104 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "AreaConversionTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/area?fromUnit=acre&toUnit=m2&valueToConvert=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"area"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "acre"
+						},
+						{
+							"key": "toUnit",
+							"value": "m2"
+						},
+						{
+							"key": "valueToConvert",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AreaConversionEmptyValueTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/area?fromUnit=acre&toUnit=m2&valueToConvert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"area"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "acre"
+						},
+						{
+							"key": "toUnit",
+							"value": "m2"
+						},
+						{
+							"key": "valueToConvert",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AreaConversionMissingParameterTest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convert/area?fromUnit=acre&toUnit=m2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convert",
+						"area"
+					],
+					"query": [
+						{
+							"key": "fromUnit",
+							"value": "acre"
+						},
+						{
+							"key": "toUnit",
+							"value": "m2"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

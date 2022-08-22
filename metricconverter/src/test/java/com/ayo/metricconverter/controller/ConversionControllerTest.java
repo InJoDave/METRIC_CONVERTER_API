@@ -58,6 +58,16 @@ class ConversionControllerTest {
 		String expected = "{\"conversionType\":\"Weight\",\"from\":\"g\",\"value\":1,\"to\":\"oz\",\"result\":0.04}";
 		JSONAssert.assertEquals(expected, response.getBody(), false);
 	}
+	
+	@Test
+	public void testGetAreaConvertedFromTo() throws JSONException {
+		HttpEntity<String> entity = new HttpEntity<>(null, headers);
+		ResponseEntity<String> response = restTemplate.exchange(
+				createURLWithPort("/convert/area?fromUnit=acre&toUnit=m2&valueToConvert=1"), HttpMethod.GET, entity,
+				String.class);
+		String expected = "{\"conversionType\":\"Area\",\"from\":\"acre\",\"value\":1,\"to\":\"m2\",\"result\":4046.9}";
+		JSONAssert.assertEquals(expected, response.getBody(), false);
+	}
 
 	private String createURLWithPort(String uri) {
 		return "http://localhost:" + port + uri;

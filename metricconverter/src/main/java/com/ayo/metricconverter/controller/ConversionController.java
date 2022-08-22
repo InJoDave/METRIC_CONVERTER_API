@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ayo.metricconverter.entity.ConversionBean;
+import com.ayo.metricconverter.service.AreaConversionService;
 import com.ayo.metricconverter.service.LengthConversionService;
 import com.ayo.metricconverter.service.TemperatureConversionService;
 import com.ayo.metricconverter.service.WeightConversionService;
@@ -32,6 +33,9 @@ public class ConversionController {
 
 	@Autowired
 	WeightConversionService weightConversionService;
+	
+	@Autowired
+	AreaConversionService areaConversionService;
 
 	/**
 	 * Return the details of conversion for Length Default conversion has been set
@@ -46,7 +50,7 @@ public class ConversionController {
 	public ResponseEntity<ConversionBean> getLengthConvertedFromTo(
 			@RequestParam(required = true, name = "fromUnit", defaultValue = "cm") String fromUnit,
 			@RequestParam(required = true, name = "valueToConvert") Double valueToConvert,
-			@RequestParam(required = true, name = "toUnit", defaultValue = "mm") String toUnit) {
+			@RequestParam(required = true, name = "toUnit", defaultValue = "in") String toUnit) {
 		if (valueToConvert == null) {
 			throw new IllegalArgumentException("Parameter valueToConvert is Empty");
 		} else {
@@ -97,6 +101,28 @@ public class ConversionController {
 			throw new IllegalArgumentException("Parameter valueToConvert is Empty");
 		} else {
 			final ConversionBean conversionBean = weightConversionService.convertWeightFromTo(fromUnit,
+					valueToConvert, toUnit);
+			return ResponseEntity.ok(conversionBean);
+		}
+	}
+	
+	/**
+	 * Return the details of conversion for Area Default conversion has been set
+	 * from sq cm to sq inch
+	 * @param fromUnit
+	 * @param valueToConvert
+	 * @param toUnit
+	 * @return
+	 */
+	@GetMapping("/area")
+	public ResponseEntity<ConversionBean> getAreaConvertedFromTo(
+			@RequestParam(required = true, name = "fromUnit", defaultValue = "cm2") String fromUnit,
+			@RequestParam(required = true, name = "valueToConvert") Double valueToConvert,
+			@RequestParam(required = true, name = "toUnit", defaultValue = "in2") String toUnit) {
+		if (valueToConvert == null) {
+			throw new IllegalArgumentException("Parameter valueToConvert is Empty");
+		} else {
+			final ConversionBean conversionBean = areaConversionService.convertAreaFromTo(fromUnit,
 					valueToConvert, toUnit);
 			return ResponseEntity.ok(conversionBean);
 		}
