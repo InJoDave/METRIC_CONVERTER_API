@@ -1,6 +1,12 @@
 # METRIC_CONVERTER_API
  This API is based on the conversion charts found in Google. If any mistake in conversion it can be easily rectified
  
+ API URL structure: http://localhost:8080/convert/UNITTYPE?fromUnit=&toUnit=&valueToConvert=
+ 
+ Here UNITTYPE must be replaced by the type of conversion you need.
+ UNITTYPE -> length | temperature | weight
+ 
+ 
 ## UNIT ABBREVIATIONS USED
 
 For LENGTH:
