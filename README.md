@@ -1,5 +1,6 @@
 # METRIC_CONVERTER_API
-
+ This API is based on the conversion charts found in Google. If any mistake in conversion it can be easily rectified
+ 
 ## UNIT ABBREVIATIONS USED
 
 For LENGTH:
