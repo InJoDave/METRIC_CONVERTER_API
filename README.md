@@ -8,21 +8,41 @@
  
  
 ## UNIT ABBREVIATIONS USED
-
-For LENGTH:
 Unit code | Unit
-
-m | Meters km | Kilometers cm | Centimeters mm | Millimeters mi | Miles yd | Yards ft | feet in | Inches
+For LENGTH:
+m | Meters 
+km | Kilometers 
+cm | Centimeters 
+mm | Millimeters 
+mi | Miles 
+yd | Yards 
+ft | feet 
+in | Inches
 
 For TEMPERATURE:
-Unit code | Unit
-
-c | Celsius f | Fahrenheit
+c | Celsius 
+f | Fahrenheit
 
 For WEIGHT:
-Unit code | Unit
+mg | milligram 
+grain | grain 
+g | grams 
+oz | Ounces 
+lb | Pounds 
+kg | kilograms 
+tons | Tons 
+t | tonnes
 
-mg | milligram grain | grain g | grams oz | Ounces lb | Pounds kg | kilograms tons | Tons t | tonnes
+For AREA:
+cm2 | sq.cm 
+m2 | sq.m
+ha | hectare 
+km2 | sq.km
+in2 | sq.inch 
+ft2 | sq.foot
+yd2 | sq.yd 
+acre | acres
+mile2 | sq.mile
 
 ## Steps to Setup
 
