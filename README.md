@@ -34,18 +34,18 @@ The app will start running at at port 8080 (Embedded Tomcat Server).
 
 ```bash
 Included Postman collection METRIC_CONVERTER_API.postman_collection.json can be imported into Postman for testing purposes
-
+```
 **3. Unit Test Cases and Integration Test Cases**
 
 ```bash
 Unit Test Cases -> JUnit5 with Mockito
 Integration Test Cases -> Spring Boot Test instance to trigger the endpoints
-
+```
 **4. Exception Handling**
 
 ```bash
 Single Exception Handler class using @RestControllerAdvice
-
+```
 **5. Dockerfile**
 
 ```bash
