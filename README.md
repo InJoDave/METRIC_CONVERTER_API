@@ -13,6 +13,11 @@ Unit code | Unit
 
 c | Celsius f | Fahrenheit
 
+For WEIGHT:
+Unit code | Unit
+
+mg | milligram grain | grain g | grams oz | Ounces lb | Pounds kg | kilograms tons | Tons t | tonnes
+
 ## Steps to Setup
 
 **1. Build and run the app using maven**
